@@ -16,14 +16,19 @@ import jakarta.servlet.http.HttpServletResponse;
 public class HelloServlet extends HttpServlet {
 
     @Override
-    protected void doGet(HttpServletRequest request,
-            HttpServletResponse response) throws ServletException, IOException {
+    protected void doGet(HttpServletRequest request, HttpServletResponse response)
+            throws ServletException, IOException {
         //TODO: get name parameter from request
-
+        String name = request.getParameter("name");
         response.setContentType("text/html");
         PrintWriter out = response.getWriter();
-        // TODO: print out result as <h2>Hello [name]</h2>, where [name] is the value of name parameter
-        
+        // TODO: print out result as <h2>Hello [name]</h2>, where [name] is the value of
+        // name parameter
+            if (name != null && !name.isEmpty()) {
+                out.print("<h2>Hello " + name + "</h2>");
+            } else {
+                out.print("<h2>Hello,Guest</h2>");
+            }
         out.close();
     }
 

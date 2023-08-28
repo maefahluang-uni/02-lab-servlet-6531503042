@@ -1,3 +1,6 @@
 {
-    "java.configuration.updateBuildConfiguration": "interactive"
+    "java.configuration.updateBuildConfiguration": "interactive",
+    "nuxt.isNuxtApp": false,
+    "maven.view": "hierarchical",
+    "java.debug.settings.onBuildFailureProceed": true
 }
